@@ -1,0 +1,7 @@
+load vncdata
+
+index=find(vncdata(:,4)>100);
+for i=1:max(size(index))
+    vncdata(index(i),4)=(vncdata(index(i)-1,4)+vncdata(index(i)+1,4))/2;
+    
+end

@@ -1,0 +1,16 @@
+%Pathloss exponent calculation
+%Parameter: 1, input snr of one band 2,path loss of the original band, 3,
+%pathloss of t
+function out=path_snrest()
+
+
+i=1;
+[m,n]=size(snrest);
+while(i<=m)
+    snrest(i,5)=snrest(i,1);
+    snrest(i,6)=snrest(i,1)+db24-db45;
+    snrest(i,7)=snrest(i,1)-db45+db52;
+    snrest(i,8)=snrest(i,1)-db45+db90;
+     
+    i=i+1;
+end

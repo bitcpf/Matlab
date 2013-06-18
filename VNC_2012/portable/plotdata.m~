@@ -1,0 +1,36 @@
+close all
+%%Plot the data
+temp=syn_gpstime(sa_sec_24,1,pkt_24,1);
+
+temp2=avr_sa_sec(sa_24);
+temp3=syn_gpstime(temp,1,temp2,1);
+
+figure
+plot(temp3(:,2),'+')
+hold on
+plot(temp3(:,5)-8,'r*')
+plot(temp3(:,8),'go')
+
+%%Plot the data
+temp=syn_gpstime(sa_sec_45,1,pkt_45,1);
+
+temp2=avr_sa_sec(sa_45);
+temp3=syn_gpstime(temp,1,temp2,1);
+
+figure
+plot(temp3(:,2),'+')
+hold on
+plot(temp3(:,5)-8,'r*')
+plot(temp3(:,8),'go')
+
+%%Plot the data
+temp=syn_gpstime(sa_sec_52,1,pkt_52,1);
+
+temp2=avr_sa_sec(sa_52);
+temp3=syn_gpstime(temp,1,temp2,1);
+
+figure
+plot(temp3(:,2))
+hold on
+plot(temp3(:,5)-8,'r*')
+plot(temp3(:,8),'go')

@@ -1,0 +1,100 @@
+cd ~/VNC_2012/outdoor/
+clear all
+close all
+
+load delay_24.csv;
+load delay_52.csv;
+load delay_70.csv;
+load delay_90.csv;
+
+
+
+% load delay_24new.csv;
+% 
+% pre=find(delay_24new(:,10)>0);
+% index=find(delay_24new(pre,10)<1)
+% 
+% d_24_p=delay_24new(index,10);
+% aix_x=0.000001:0.0001:1;
+% y=hist(d_24_p,aix_x);
+% figure;
+% yy=y/length(d_24_p);%\u5404\u533a\u95f4\u4eba\u6570\u5360\u5b66\u751f\u7684\u767e\u5206\u6bd4
+% bar(aix_x,yy)
+% 
+% title('2.412newGHz')
+
+
+%hold on;
+pre=find(delay_24(:,10)>0);
+index=find(delay_24(pre,10)<1)
+
+d_24_p=delay_24(index,10)
+
+aix_x=0:0.0001:1;
+y=hist(d_24_p,aix_x);
+%figure;
+yy=y/length(d_24_p);%\u5404\u533a\u95f4\u4eba\u6570\u5360\u5b66\u751f\u7684\u767e\u5206\u6bd4
+bar(aix_x,yy)
+title('2.412GHz')
+% xlabel('\u5206\u6570')
+% ylabel('\u767e\u5206\u6bd4')
+
+pre=find(delay_52(:,10)>0);
+index=find(delay_52(pre,10)<1)
+
+d_52_p=delay_52(index,10)
+
+aix_x=0:0.0001:1;
+y=hist(d_52_p,aix_x);
+figure; 
+yy=y/length(d_52_p);%\u5404\u533a\u95f4\u4eba\u6570\u5360\u5b66\u751f\u7684\u767e\u5206\u6bd4
+bar(aix_x,yy)
+
+title('5.20GHz')
+
+
+
+
+pre=find(delay_70(:,10)>0);
+index=find(delay_70(pre,10)<1)
+
+d_70_p=delay_70(index,10)
+
+aix_x=0:0.0001:1;
+y=hist(d_70_p,aix_x);
+figure; 
+yy=y/length(d_70_p);%\u5404\u533a\u95f4\u4eba\u6570\u5360\u5b66\u751f\u7684\u767e\u5206\u6bd4
+bar(aix_x,yy)
+
+title('2.642GHz')
+
+
+pre=find(delay_90(:,10)>0);
+index=find(delay_90(pre,10)<1)
+
+d_90_p=delay_90(index,10)
+
+aix_x=0:0.0001:1;
+y=hist(d_90_p,aix_x);
+figure; 
+yy=y/length(d_90_p);%\u5404\u533a\u95f4\u4eba\u6570\u5360\u5b66\u751f\u7684\u767e\u5206\u6bd4
+bar(aix_x,yy)
+
+title('5.805GHz')
+
+
+
+
+%pre=find(delay_24(:,10)>0);
+%index=find(delay_24(pre,10)<1)
+
+d_24_p=delay_24(:,10)
+
+aix_x=0:0.0001:3;
+y=hist(d_24_p,aix_x);
+ yy=y/length(d_24_p);%\u5404\u533a\u95f4\u4eba\u6570\u5360\u5b66\u751f\u7684\u767e\u5206\u6bd4
+ figure;
+bar(aix_x,yy)
+title('No process')
+
+
